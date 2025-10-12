@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>言語学でスッキリ解決！英語の「なぜ？」(いのほたなぜ) | 井上逸兵・堀田隆一</title>
+    <meta name="description" content="『言語学でスッキリ解決！英語の「なぜ？」（いのほたなぜ）』――著者：井上逸兵・堀田隆一／出版社：ナツメ社。英語史と言語学の知見で“英語のなぜ”を解き明かす。対応動画・試し読み・購入リンクあり。">
+    <link rel="stylesheet" href="inohota_boost.css">
+    <style>
+        :root {
+            --primary-color: #4a69bd;
+            --secondary-color: #1e3799;
+            --text-color: #333;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --highlight-color: #e44d26;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding-top: 60px;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { line-height: 1.3; font-weight: 700; }
+        h2 { font-size: 1.8rem; border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 25px; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .section { padding: 50px 0; }
+
+        .sticky-nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: 60px;
+            background: var(--header-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;
+        }
+        .nav-icon { display: flex; align-items: center; gap: 10px; font-weight: bold; color: var(--text-color); }
+        .nav-icon img { height: 40px; border-radius: 8px; }
+        .nav-icon:hover { text-decoration: none; }
+        .nav-links { list-style: none; display: flex; gap: 15px; }
+        .nav-links a { font-weight: bold; font-size: 0.9rem; padding: 5px 10px; border-radius: 5px; transition: background-color 0.2s; white-space: nowrap; }
+        .nav-links a:hover { background-color: #e9ecef; text-decoration: none; }
+        
+        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 60px 20px; text-align: center; }
+        .hero-content { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px; }
+        .hero-text { max-width: 500px; text-align: left; position: relative; }
+        .hero-text .catch-copy { font-size: 2.5rem; font-weight: bold; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.1rem; margin-bottom: 30px; }
+        .hero-image img { max-width: 300px; border-radius: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+        .hero-image img:hover { transform: scale(1.05); }
+        .cta-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .cta-button { display: inline-block; padding: 12px 25px; border-radius: 50px; font-size: 1rem; font-weight: bold; text-align: center; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .amazon { background-color: #FF9900; color: white; }
+        .rakuten { background-color: #BF0000; color: white; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .ranking-badge {
+            background-color: var(--highlight-color); color: white; padding: 8px 15px;
+            border-radius: 5px; font-weight: bold; font-size: 1rem; margin-bottom: 20px;
+            display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .ranking-badge::before { content: '🏆'; margin-right: 8px; }
+
+        .card { background: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: var(--shadow); margin-bottom: 30px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 10px; margin-top: 20px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .about-content { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+        .about-content img { float: left; width: 100px; height: 100px; border-radius: 15px; margin-right: 20px; }
+        .authors { display: flex; gap: 30px; flex-wrap: wrap; }
+        .author-card { flex: 1; min-width: 280px; text-align: center; }
+        .author-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .flyer-section img { width: 100%; max-width: 640px; display: block; margin: 0 auto; box-shadow: var(--shadow); border-radius: 10px; }
+        
+        .sample-buttons { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+        .sample-button {
+            flex: 1; min-width: 200px; background-color: var(--secondary-color); color: white;
+            padding: 15px 20px; border-radius: 8px; text-align: center;
+            font-weight: bold; font-size: 1.1rem; transition: background-color 0.3s, transform 0.2s;
+        }
+        .sample-button:hover { background-color: var(--primary-color); text-decoration: none; transform: translateY(-3px); }
+        .sample-button::before { content: '📖'; margin-right: 10px; }
+        
+        .recommend-list { list-style: none; padding-left: 0; }
+        .recommend-list li { padding: 10px 0 10px 35px; position: relative; border-bottom: 1px dashed #ddd; }
+        .recommend-list li:last-child { border-bottom: none; }
+        .recommend-list li::before { content: '✓'; color: var(--primary-color); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+        .testimonials-placeholder { text-align: center; }
+
+        .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+        .floating-cta .cta-button { box-shadow: 0 5px 15px rgba(0,0,0,0.3); font-size: 1.1rem; padding: 15px 30px; }
+
+        .toc-search-box { width: 100%; padding: 15px; font-size: 1.1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 30px; }
+        .accordion-button {
+            background-color: var(--secondary-color); color: white; cursor: pointer; padding: 18px;
+            width: 100%; border: none; text-align: center; outline: none;
+            font-size: 1.6rem; font-weight: 700; transition: background-color 0.3s;
+            border-radius: 8px; margin-bottom: 15px; position: relative;
+        }
+        .accordion-button:hover, .accordion-button.active { background-color: var(--primary-color); }
+        .accordion-button::after {
+            content: '\25BC'; /* Down arrow */
+            font-size: 1rem; position: absolute; right: 20px;
+            top: 50%; transform: translateY(-50%); transition: transform 0.3s;
+        }
+        .accordion-button.active::after { transform: translateY(-50%) rotate(180deg); }
+        .accordion-panel { padding: 0; background-color: transparent; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding-top: 15px; }
+        .topic-card { background: var(--card-bg); border-radius: 10px; box-shadow: var(--shadow); display: flex; flex-direction: column; padding: 20px; transition: transform 0.2s; }
+        .topic-card:hover { transform: translateY(-5px); }
+        .topic-content { flex-grow: 1; }
+        .topic-content h3 { font-size: 1.1rem; }
+        .topic-qr { margin-top: 15px; text-align: center; }
+        .topic-qr img { width: 100px; height: 100px; object-fit: contain; }
+        .topic-card.hidden { display: none; }
+
+        footer { text-align: center; padding: 30px 20px; margin-top: 40px; background-color: var(--secondary-color); color: white; }
+
+        @media (max-width: 768px) {
+            body { padding-top: 50px; }
+            .sticky-nav { height: 50px; }
+            .nav-links { display: none; }
+            .nav-icon span { display: none; }
+            .hero-text .catch-copy { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .section { padding: 40px 0; }
+            .card { padding: 20px; }
+            .about-content img { float: none; display: block; margin: 0 auto 20px auto; }
+            .floating-cta { width: calc(100% - 40px); right: 20px; bottom: 20px; }
+            .floating-cta .cta-button { width: 100%; font-size: 1rem; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<script src="inohota_boost.js" defer></script>
+<body id="page-top">
+
+    <nav class="sticky-nav">
+        <a href="#page-top" class="nav-icon">
+            <img src="../lib/inohotanaze_icon.jpg" alt="いのほたなぜ 公式アイコン">
+            <span>いのほた言語学チャンネル</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">本書について</a></li>
+            <li><a href="#sample-read">試し読み</a></li>
+            <li><a href="#achievement">祝！ランキング2位</a></li>
+            <li><a href="#recommend">おすすめ</a></li>
+            <li><a href="#testimonials">読者の声</a></li>
+            <li><a href="#authors">著者</a></li>
+            <li><a href="#contents">目次と対応動画リンク集</a></li>
+        </ul>
+    </nav>
+
+    <div class="floating-cta">
+        <a href="https://amzn.to/4nmDn6Y" target="_blank" class="cta-button amazon">Amazonで買う</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="ranking-badge">
+                    発売前予約でAmazon新着ランキング第2位！
+                </div>
+                <h1 class="catch-copy">英語の「なぜ？」が<br>「なるほど！」に変わる瞬間。</h1>
+                <p>YouTube「いのほた言語学チャンネル」から生まれた、知的好奇心を満たす一冊。二人の言語学者の対話で、英語の奥深い世界へご案内します。</p>
+                <div class="cta-buttons">
+                    <a href="https://amzn.to/4nmDn6Y" target="_blank" class="cta-button amazon">Amazonで購入</a>
+                    <a href="https://books.rakuten.co.jp/rb/18326943/" target="_blank" class="cta-button rakuten">楽天ブックスで購入</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <a href="https://amzn.to/4nmDn6Y" target="_blank">
+                    <img src="../lib/inohotanaze_front_cover_small.jpg" alt="『言語学でスッキリ解決！英語の「なぜ？」』書影" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="about" class="section card">
+            <h2>本書について</h2>
+            <div class="about-content">
+                <img src="../lib/inohotanaze_icon.jpg" alt="いのほた言語学チャンネル アイコン" loading="lazy">
+                <div>
+                    <p>本書は、慶應義塾大学の同僚である井上逸兵（社会言語学）と堀田隆一（英語史）が運営するYouTubeチャンネル「いのほた言語学チャンネル」の人気配信回をベースに、再構成・書籍化したものです。</p>
+                    <p>学校で「そういうものだから」と習った英語のルールも、言語学の視点から見ると、そこには歴史的な背景や面白い理屈が隠されています。本書では、対話形式の軽快なテンポで、英語に関する素朴な疑問から言語学の奥深い世界まで、読者の皆さんをいざないます。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="flyer" class="section">
+            <h2 style="text-align:center;">ご紹介チラシ</h2>
+            <div class="flyer-section">
+                 <a href="../lib/inohotanaze_flyer.png" target="_blank">
+                    <img src="../lib/inohotanaze_flyer_small.png" alt="「いのほたなぜ」紹介チラシ" loading="lazy">
+                 </a>
+            <p align="center">（このチラシは <a href="https://sites.google.com/view/khelf-hotta">khelf （慶應英語史フォーラム）</a>の藤平さんに有志で制作していただきました，ありがとうございます！）</p>
+            </div>
+        </section>
+
+        <section id="sample-read" class="section card">
+            <h2 style="text-align:center;">本書を少しだけ覗いてみませんか？</h2>
+            <p style="text-align:center;">本書の雰囲気や内容を少しだけお見せします。ご興味のある章をクリックして、PDFでお読みいただけます。</p>
+            <div class="sample-buttons">
+                <a href="sample_1.pdf" target="_blank" class="sample-button">pp. 16-17: プロローグ　「英語学」って何？</a>
+                <a href="sample_2.pdf" target="_blank" class="sample-button">pp. 34-35: Z がアルファベットの最後に追いやられた理由</a>
+                <a href="sample_3.pdf" target="_blank" class="sample-button">pp. 50-51: 英米人はほめられても謙遜しない、はウソ！</a>
+            </div>
+        </section>
+
+        <section id="achievement" class="section card">
+            <h2 style="text-align:center;">皆様のご支援に感謝！ランキング第2位を記録しました</h2>
+            <p style="text-align:center;">2025年9月13日、発売を記念して開催したライブ配信企画「いのほた本の予約爆撃アワー」では、本当に多くの皆様にご参加いただきました。皆様の熱い応援のおかげで、本書は<strong>Amazonの新着ランキング（英語部門）で、一時第2位を記録</strong>する快挙を成し遂げました。心より感謝申し上げます。</p>
+            <p style="text-align:center;">このイベントは、本書が読者の皆様との協同作業から生まれたことの象徴です。当日の熱気あふれるライブの様子は、以下のアーカイブからご覧いただけます。</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/o0Zf0PeQKUo" title="「いのほた本ライブ」予約爆撃アワーの記録" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="recommend" class="section card">
+            <h2>こんな方におすすめです</h2>
+            <ul class="recommend-list">
+                <li>学校英語の「丸暗記」に疑問を感じていた方</li>
+                <li>言葉の成り立ちや歴史、語源に興味がある方</li>
+                <li>言語学の世界を気軽に覗いてみたい方</li>
+                <li>「いのほた言語学チャンネル」のリスナー、ファンの皆様</li>
+                <li>英語を教える立場で、知識の引き出しを増やしたい方</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2 style="text-align:center;">読者の声</h2>
+            <div class="card testimonials-placeholder">
+                <p>本書のご感想は、ぜひX（旧Twitter）でハッシュタグ<br><strong><a href="https://x.com/hashtag/いのほたなぜ" target="_blank">#いのほたなぜ</a></strong><br>を付けてご投稿ください！</p>
+                <p>皆様からのご感想を心よりお待ちしております。</p>
+                <p>以下は，すでに寄せられてきたご感想です。</p>
+                <iframe src='https://widgets.sociablekit.com/twitter-hashtag-feed/iframe/25609058' frameborder='0' width='100%' height='520' loading='lazy'></iframe>
+            </div>
+        </section>
+        
+        <section id="authors" class="section">
+            <h2 style="text-align:center;">著者紹介</h2>
+            <div class="card authors">
+                <div class="author-card">
+                    <img src="inoue_profile.jpg" alt="井上逸兵 教授" loading="lazy">
+                    <h3>井上 逸兵 <small>(いのうえ いっぺい)</small></h3>
+                    <p class="specialty">慶應義塾大学 教授 / 社会言語学</p>
+                    <p>ことばと社会の関係を研究。特に、社会のなかで言語がどのように変化していくのかに関心がある。著書多数。</p>
+                    <p><a href="https://ipinoue.jp/" target="_blank">井上逸兵 Official Site</a></p>
+                </div>
+                <div class="author-card">
+                    <img src="hotta_profile.jpg" alt="堀田隆一 教授" loading="lazy">
+                    <h3>堀田 隆一 <small>(ほった りゅういち)</small></h3>
+                    <p class="specialty">慶應義塾大学 教授 / 英語史</p>
+                    <p>英語の歴史的研究が専門。毎日更新のブログ「hellog～英語史ブログ」は開設以来16年以上毎日継続中。</p>
+                    <p><a href="https://user.keio.ac.jp/~rhotta/hellog/" target="_blank">「hellog～英語史ブログ」</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contents" class="section">
+            <h2 style="text-align:center;">書籍から動画へ：目次と対応動画リンク集</h2>
+            <p style="text-align:center; max-width: 700px; margin: 0 auto 30px;">
+                キーワードでトピックを検索したり、各章をクリックして開閉できます。
+            </p>
+            
+            <input type="text" id="toc-search" class="toc-search-box" placeholder="キーワードで検索 (例: 不規則，英語学，コミュニケーション)">
+
+            <div class="accordion-container">
+                <button class="accordion-button">入門編</button>
+                <div class="accordion-panel">
+                    <div class="topics-grid">
+                        <article class="topic-card"><div class="topic-content"><h3>1. 「英語学」って何？</h3><p><a href="https://www.youtube.com/watch?v=WCYYNCSaXXU">「英語学」ってなに？--むずかしい「英語」を「学」ぶわけではありません！！【#1】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_1.png" alt="QR: 1. 「英語学」って何？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>2. 「決まり文句を覚える」ことの学習効果が高いワケ</h3><p><a href="https://www.youtube.com/watch?v=CDRyXusI7nM">言語学と「英会話」ってあんまり関係なそうに思えるかもですが....こんな研究もあります【#173】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_2.png" alt="QR: 2. 「決まり文句を覚える」ことの学習効果が高いワケ" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>3. 英米人はなんでもストレートに言うと思ったら大まちがい</h3><p><a href="https://www.youtube.com/watch?v=a56yHlMhBd8">英米人はなんでもストレートにものを言うと思ったら大間違い--しかもわりと最近の英語の特徴【#6】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_3.png" alt="QR: 3. 英米人はなんでもストレートに言うと思ったら大まちがい" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>4. 昔の英語には謝罪表現がなかった!? </h3><p><a href="https://www.youtube.com/watch?v=BCIxNzO0Tus">昔の英語には謝罪表現がなかった！！--えっ？！謝んなかったってこと？！【#7】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_4.png" alt="QR: 4. 昔の英語には謝罪表現がなかった!? " loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>5. 社会言語学的視点からpleaseの使い方を考える</h3><p><a href="https://www.youtube.com/watch?v=0fAsn5-xM0U&t">pleaseの使いすぎはキケン！？ーコミュニケーションの社会言語学【#4】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_5.png" alt="QR: 5. 社会言語学的視点からpleaseの使い方を考える" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>6. 英語と日本語は謝り方がちがう？</h3><p><a href="https://www.youtube.com/watch?v=mzCaR76JCyc">英語の大人な謝り方---でも、やっぱり日本人から見るとなんだかなー【#8】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_6.png" alt="QR: 6. 英語と日本語は謝り方がちがう？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>7. 人は言葉の意味を悪くしたがる!? </h3><p><a href="https://www.youtube.com/watch?v=Fk-HF0puTv4">人はことばの意味を悪くしたがる！？【#61】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_7.png" alt="QR: 7. 人は言葉の意味を悪くしたがる!? " loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>8. ladyは「パンをこねる人」？　女性を表す言葉の変遷</h3><p><a href="https://www.youtube.com/watch?v=XikRoYEplOM">Ladyはもとは複合語！ー今ならアウトな意味かも？！　【#62】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_8.png" alt="QR: 8. ladyは「パンをこねる人」？　女性を表す言葉の変遷" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>9. ネイティブはLとRをまちがえないと言うがそうでもなかった</h3><p><a href="https://www.youtube.com/watch?v=TZBW8Vk3UIk">RとＬはぜったい間違えないと英語ネイティブは言うが、歴史的に見るとそうでもない【#121】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_9.png" alt="QR: 9. ネイティブはLとRをまちがえないと言うがそうでもなかった" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>10. Zがアルファベットの最後に追いやられた理由</h3><p><a href="https://www.youtube.com/watch?v=1-XL2fLA8Pk">なぜＺはアルファベットの最後に追いやられたのか？---時代に翻弄された日陰者「Ｚ」の物語【#169】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_1_10.png" alt="QR: 10. Zがアルファベットの最後に追いやられた理由" loading="lazy"></div></article>
+                    </div>
+                </div>
+
+                <button class="accordion-button">初級編</button>
+                <div class="accordion-panel">
+                    <div class="topics-grid">
+                        <article class="topic-card"><div class="topic-content"><h3>1. 驚くべき英語力を持った日本人が明治初期にいた！</h3><p><a href="https://www.youtube.com/watch?v=n6cx4abCbOY">日本人がすんごく英語ができる！と言われた時代---「英語達人」岡倉天心はどれくらいすごかったか---名著ご紹介・斎藤兆史『英語達人列伝』【#109】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_1.png" alt="QR: 1. 驚くべき英語力を持った日本人が明治初期にいた！" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>2. 日本人が英語ができないのは不幸なこと？</h3><p><a href="https://www.youtube.com/watch?v=SkKYDDd1I8U">漱石の時代あたりから日本人は英語ができなくなったと言われているが、その背景は？【#117】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_2.png" alt="QR: 2. 日本人が英語ができないのは不幸なこと？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>3. 島国日本とイギリスの不思議な共通点</h3><p><a href="https://www.youtube.com/watch?v=Z7KNETRXRCI">大陸からの距離が日本とイギリスを似た国にした【#153】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_3.png" alt="QR: 3. 島国日本とイギリスの不思議な共通点" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>4. オックスフォード英語辞典（OED）のここがすごい！</h3><p><a href="https://www.youtube.com/watch?v=2vmW5khnIB0">OED（オクスフォード英語辞典--Oxford English Dictionary）の特徴まるわかり！【#171】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_4.png" alt="QR: 4. オックスフォード英語辞典（OED）のここがすごい！" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>5. 椎茸、カワイイ、引きこもりetc. 英語になった日本語</h3><p><a href="https://www.youtube.com/watch?v=SGhJgSlPSAw">最初の日本語由来の英語は？いまやhikikomoriやenjo kosaiも！--外来語の諸相-「ナイター」「柿」【#209】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_5.png" alt="QR: 5. 椎茸、カワイイ、引きこもりetc. 英語になった日本語" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>6. It’s OK.はYes？　それともNo？</h3><p><a href="https://youtu.be/PLE3hemLRkI">「結構です」、「いいです」、「だいじょうぶです」だけじゃない―英語にもあるあいまいな表現【#269】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_6.png" alt="QR: 6. It’s OK.はYes？　それともNo？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>7. 英米人はほめられても謙遜しない、はウソ！</h3><p><a href="https://youtu.be/hoJAfYadhro">英米人はほめられても謙遜しない、はウソ！ただし、日本人の謙遜と原理がちがう【# 15】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_7.png" alt="QR: 7. 英米人はほめられても謙遜しない、はウソ！" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>8. あなたはどちらのうなずきタイプ？　あいづちの言語学</h3><p><a href="https://www.youtube.com/watch?v=YUPwvB91jJk">あいづちの言語学・あいづちの異文化コミュニケーション【# 27】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_8.png" alt="QR: 8. あなたはどちらのうなずきタイプ？　あいづちの言語学" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>9. 「よろしくお願いします」はどう訳す？</h3><p><a href="https://youtu.be/Bv608ev7OsE">とんでもない英語に訳されるワケ【#37】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_9.png" alt="QR: 9. 「よろしくお願いします」はどう訳す？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>10. 英語で名前を呼ぶのは、日本語の「～ね」「～よ」と同じ？</h3><p><a href="https://youtu.be/6X7drfP8mgQ">英語の呼びかけ語は日本語のあれと同じ!!??【井上逸兵・堀田隆一英語学言語学チャンネル #44】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_10.png" alt="QR: 10. 英語で名前を呼ぶのは、日本語の「～ね」「～よ」と同じ？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>11. 短縮形と短縮しない表現はイコールではない</h3><p><a href="https://youtu.be/KIHkTmFg0fg">短縮形の意味は元の形と意味は同じではない---短縮形、省略の意味するところから話はLet'sの意味へと【#77】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_11.png" alt="QR: 11. 短縮形と短縮しない表現はイコールではない" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>12. 英語にもたくさんある同音異義語はなぜ生まれた？</h3><p><a href="https://www.youtube.com/watch?v=i3Nhvv1wtI4">英語と日本語とでは同音異義語ができるカラクリがちがう！【# 29】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_12.png" alt="QR: 12. 英語にもたくさんある同音異義語はなぜ生まれた？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>13. 昔の英語には日本語と同じ SOV の語順もあった！</h3><p><a href="https://www.youtube.com/watch?v=xM1KJVQwx3E">英語の語順は大昔はＳＯＶだったのになぜＳＶＯに変わったかいろいろ考えてみた。【# 30】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_13.png" alt="QR: 13. 昔の英語には日本語と同じ SOV の語順もあった！" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>14. throughは516通り！　中世英語の綴りはマイルール </h3><p><a href="https://www.youtube.com/watch?v=MXdI6tF_cn8">ゆる～い中世の英語の世界では綴りはマイルール？！throughのスペリングは515通り！堀田的ゆるさベスト10！【#91】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_14_1.png" alt="QR: 14. throughは516通り！　中世英語の綴りはマイルール " loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>14. throughは516通り！　中世英語の綴りはマイルール </h3><p><a href="https://www.youtube.com/watch?v=TjbKnTcYAHM">中世のthroughの綴りは５１５通りと思っていたが...【#321】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_14_2.png" alt="QR: 14. throughは516通り！　中世英語の綴りはマイルール " loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>15. oftenの“t”を発音する人が増えているのはなぜ？</h3><p><a href="https://www.youtube.com/watch?v=IE63_xRh9Uk">oftenのtを発音する人が増加傾向！？　なぜ？　---　oftenだけの謎【#81】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_15.png" alt="QR: 15. oftenの“t”を発音する人が増えているのはなぜ？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>16. Do you…?のdoは、そもそもどーゆーもの？</h3><p><a href="https://www.youtube.com/watch?v=wKq6l9g50AA">Do you know …のdoって どぅーゆーものかdo you know?【# 31】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_16.png" alt="QR: 16. Do you…?のdoは、そもそもどーゆーもの？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>17. 言語学的にみると「１」と「２」はかなり特別な数</h3><p><a href="https://www.youtube.com/watch?v=5qPLruwd62E">英語で「２」はとても特別な数ー「１」と「２」からこんなに広がる英語史ネタ、現代英語ネタ【# 12】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_17.png" alt="QR: 17. 言語学的にみると「１」と「２」はかなり特別な数" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>18. かつて英語には「夏」と「冬」しかなかった</h3><p><a href="https://www.youtube.com/watch?v=hH8wZnzjYWw">かつて英語には「夏」と「冬」しかなかった。「春」や「秋」はどうやってうまれた？【#97】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_18.png" alt="QR: 18. かつて英語には「夏」と「冬」しかなかった" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>19. shi、chi、jiなどのローマ字表記は、実はフランス語的？</h3><p><a href="https://www.youtube.com/watch?v=0vvtjC2Ohtg">最近よく見かけるshi、chi、jiなどのローマ字表記は、実は英語的ではない！【#99】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_19.png" alt="QR: 19. shi、chi、jiなどのローマ字表記は、実はフランス語的？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>20. dolphinのphはかっこつけだった？</h3><p><a href="https://www.youtube.com/watch?v=p6l8PCrtFZU">dolphinのphは元はf、doubtのbは元はなかった！いったいなぜ？？？【#161】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_20.png" alt="QR: 20. dolphinのphはかっこつけだった？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>21. eyeをこんな変な綴りにした「三文字規則」とは？</h3><p><a href="https://www.youtube.com/watch?v=718S97e_fr0">eyeはもっとへんなつづりだった！！三文字規則が生み出した現象たち?--へんなアルファベット表向け単語大募集！【#185】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_21.png" alt="QR: 21. eyeをこんな変な綴りにした「三文字規則」とは？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>22. 英語の月の名前の秘密と謎</h3><p><a href="https://www.youtube.com/watch?v=bIaC9-UfPk8">英語の月の名前のひみつと謎！【#203】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_22.png" alt="QR: 22. 英語の月の名前の秘密と謎" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>23. 国や船をitではなくshe/herで指したのはなぜ？</h3><p><a href="https://www.youtube.com/watch?v=gY44A8I1MSs">France increased her exports by 10%.のように英語では国や船をshe/herで指すが、その起源は？！【#147】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_23.png" alt="QR: 23. 国や船をitではなくshe/herで指したのはなぜ？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>24. makeやlet、getなどの使役動詞はどう使い分ける？</h3><p><a href="https://www.youtube.com/watch?v=RERfZ3zNgeU">使役動詞make、let、get、haveの使い分けの鍵はやっぱりアレです。【#36】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_24.png" alt="QR: 24. makeやlet、getなどの使役動詞はどう使い分ける？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>25. 「危ない！」を英語では何と言う？</h3><p><a href="https://youtu.be/SbPAcxwW9C4">言語行為論で日常生活の解像度をあげる！ー言語学の応用もいろいろおもしろい！【#207】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_25.png" alt="QR: 25. 「危ない！」を英語では何と言う？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>26. なぜ英語の前置詞はこんなに多く複雑なのか</h3><p><a href="https://www.youtube.com/watch?v=iSVtmUSibxk">英語に前置詞はなぜこんなに多いのか？【#107】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_26.png" alt="QR: 26. なぜ英語の前置詞はこんなに多く複雑なのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>27. 童話だけじゃない！ 言語学者グリム兄弟の偉大な業績</h3><p><a href="https://www.youtube.com/watch?v=8hC1kdAWtc8">リニューアルしました！言語学者グリム兄弟の偉業とは？ーなぜ童話を収集？【#201】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_2_27.png" alt="QR: 27. 童話だけじゃない！ 言語学者グリム兄弟の偉大な業績" loading="lazy"></div></article>
+                    </div>
+                </div>
+
+                <button class="accordion-button">中級編</button>
+                <div class="accordion-panel">
+                    <div class="topics-grid">
+                        <article class="topic-card"><div class="topic-content"><h3>1. 英語コンプレックスから解放される日はくるのか</h3><p><a href="https://youtu.be/3oH95jfvcu8">英語コンプレックスから解放される日はくるのか？--英語帝国主義と英語帝国主義批判を考える【#101】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_1.png" alt="QR: 1. 英語コンプレックスから解放される日はくるのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>2. 「言わなくてもわかる」は今後通用しなくなる？</h3><p><a href="https://youtu.be/xmg1bBeexHo">「言わなくてもわかる」日本のコミュニケーションの変化---紅白歌合戦とオリンピックの変化は社会語用論的変化とつながる---根底にあるのはアレ【#135】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_2.png" alt="QR: 2. 「言わなくてもわかる」は今後通用しなくなる？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>3. 英語になって意味が変化した日本語たち</h3><p><a href="https://www.youtube.com/watch?v=teuev8Y5ZFQ">OED（Oxford English Dictionary）の今年3月のアップデートのテーマは日本語由来の英語！【#235】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_3.png" alt="QR: 3. 英語になって意味が変化した日本語たち" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>4. 由来を調べるとおもしろい！　メジャーリーグのチーム名</h3><p><a href="https://youtu.be/A-VvyPNALw4">大谷翔平さん、ロサンゼルス・ドジャースのDodgersの由来、ご存じかなー？（ただ知りたいだけの口調）---がんばれ！大谷翔平さん！【#189】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_4.png" alt="QR: 4. 由来を調べるとおもしろい！　メジャーリーグのチーム名" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>5. いまだ読解されず！　現存する最古の英文の謎</h3><p><a href="https://www.youtube.com/watch?v=Mqte1kspgMU">現存する最古の英文の謎を堀田はどう読み解く？【#139】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_5.png" alt="QR: 5. いまだ読解されず！　現存する最古の英文の謎" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>6. なぜこんな名前になった？ 文法用語の名づけの謎</h3><p><a href="https://www.youtube.com/watch?v=_7RrSrGYMWU">文法用語の成り立ちはこんなにいい加減だった？？---文法用語の意味はスカスカw【#163】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_6.png" alt="QR: 6. なぜこんな名前になった？ 文法用語の名づけの謎" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>7. 英語のアクセントはなぜ語によってバラバラなのか</h3><p><a href="https://www.youtube.com/watch?v=Em8u-nC5joI">英語のアクセントはなぜ語によってバラバラなのか　【#73】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_7.png" alt="QR: 7. 英語のアクセントはなぜ語によってバラバラなのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>8. カタカナや外来語、気にするのは日本らしい？</h3><p><a href="https://www.youtube.com/watch?v=xB3tZtX-NyE">ニッポンのカタカナ語を英語史から斬る！【# 22】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_8.png" alt="QR: 8. カタカナや外来語、気にするのは日本らしい？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>9. 疑問詞whichは、なぜ関係代名詞にもなったのか</h3><p><a href="https://www.youtube.com/watch?v=Vmr27NSxFl8">受験生のみなさーん！関係代名詞の文法問題を間違えた時の対処法ですよー【# 18】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_9.png" alt="QR: 9. 疑問詞whichは、なぜ関係代名詞にもなったのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>10. goの過去形はなぜwent？　不規則変化がカオスな理由</h3><p><a href="https://www.youtube.com/watch?v=vcRD3OSE1Ek">新説！goの過去形がwentな理由【# 25】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_10.png" alt="QR: 10. goの過去形はなぜwent？　不規則変化がカオスな理由" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>11. sing-sung-sungと変な活用をするネイティブがいる</h3><p><a href="https://www.youtube.com/watch?v=zjTbRoZKNVo">英語の不規則活用動詞のひきこもごも--ヴァイキングも登場！【#35】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_11.png" alt="QR: 11. sing-sung-sungと変な活用をするネイティブがいる" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>12. 中世イギリスには、今よりたくさんの苗字があった</h3><p><a href="https://www.youtube.com/watch?v=-lXn-164er4">中世（中世英語）の「チーズ屋」という苗字は（現代の綴りで言うと）Cheesemaker、Cheeser、Cheesewrightほかバリエーション豊富！【#255】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_12.png" alt="QR: 12. 中世イギリスには、今よりたくさんの苗字があった" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>13. 疑問詞whoの発音と変な綴りの変遷</h3><p><a href="https://www.youtube.com/watch?v=AOCfJpgs6Qc">Whoの発音はなぜへんなのか？--点々とhとアクセント記号は同じ役割？【#227】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_13.png" alt="QR: 13. 疑問詞whoの発音と変な綴りの変遷" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>14. アメリカはあんなに広いのに、なぜか方言差が少ない</h3><p><a href="https://www.youtube.com/watch?v=MkWZ1hulal8">アメリカがあんなに広い国土なのにイギリスや日本より方言差が小さい理由を考えます【#211】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_14.png" alt="QR: 14. アメリカはあんなに広いのに、なぜか方言差が少ない" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>15. 死と排泄とセックスと。タブーをめぐる婉曲表現</h3><p><a href="https://www.youtube.com/watch?v=ryYDaApb8sM">タブーと婉曲がぐるぐる回ることばの世界【#39】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_15.png" alt="QR: 15. 死と排泄とセックスと。タブーをめぐる婉曲表現" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>16. 日米首脳がお互いをどう呼ぶか問題を考える</h3><p><a href="https://www.youtube.com/watch?v=rVexpSJJrG4">日本の総理が日米共同会見などでやりがちなこと【#41】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_16.png" alt="QR: 16. 日米首脳がお互いをどう呼ぶか問題を考える" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>17. 眉を動かす英米人、眉を動かさない日本人</h3><p><a href="https://www.youtube.com/watch?v=1E6mRcZ0JWo">コロナ禍の問題は友達ができないことだけじゃない！【#59】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_17.png" alt="QR: 17. 眉を動かす英米人、眉を動かさない日本人" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>18. メタ言語・メタメッセージ・メタコミュニケーション</h3><p><a href="https://youtu.be/Jen-otp4G2I">メタ言語・メタメッセージ・メタコミュニケーション【#65】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_18.png" alt="QR: 18. メタ言語・メタメッセージ・メタコミュニケーション" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>19. 意外に奥深い代名詞の話あれこれ</h3><p><a href="https://www.youtube.com/watch?v=pIhctZwvLcs">指示代名詞は意外に奥深いーダイクシスの豊かな世界・語用論の展開【#93】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_19.png" alt="QR: 19. 意外に奥深い代名詞の話あれこれ" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>20. 「家に連絡するの？」は英語で何と言う？</h3><p><a href="https://youtu.be/_p5gbvtPRqc">【#215】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_20.png" alt="QR: 20. 「家に連絡するの？」は英語で何と言う？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>21. Iが「誰」で、meが「みんな」!?　訳しづらい人称代名詞</h3><p><a href="https://youtu.be/wHb0tQ-txR8">Iもmeも日本語にしづらい!?【#223】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_21.png" alt="QR: 21. Iが「誰」で、meが「みんな」!?　訳しづらい人称代名詞" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>22. 勘違いが生んだ言語変化「二重マーキング」とは</h3><p><a href="https://www.youtube.com/watch?v=_tY28n2OUHk">言語に「二重ほにゃらら」はつきもの？--勘違いが一般化し標準になることも【#241】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_22.png" alt="QR: 22. 勘違いが生んだ言語変化「二重マーキング」とは" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>23. 英語とインドのサンスクリット語の祖先は同じだった？</h3><p><a href="https://www.youtube.com/watch?v=_-YlpeQRigs">インド・ヨーロッパ祖語という着想のどこがすごいのか？！---近代言語学の祖と言われるSir William Jonesはどのような人物？【#193】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_3_23.png" alt="QR: 23. 英語とインドのサンスクリット語の祖先は同じだった？" loading="lazy"></div></article>
+                    </div>
+                </div>
+
+                <button class="accordion-button">上級編</button>
+                <div class="accordion-panel">
+                    <div class="topics-grid">
+                        <article class="topic-card"><div class="topic-content"><h3>1. なぜ英語では「あなたのオフィスに来ます」と言うのか</h3><p><a href="https://youtu.be/_YRHWqo8al0">comeとかgoとかthisとかthatとか単純そうに見えるけど、物理的空間と社会言語学と認知言語学の接点です【#253】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_1.png" alt="QR: 1. なぜ英語では「あなたのオフィスに来ます」と言うのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>2. I know your feeling.は気持ち悪い？</h3><p><a href="https://www.youtube.com/watch?v=esYQ7cbb3ds">コミュニケーションでも文法はおもしろい！【# 20】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_2.png" alt="QR: 2. I know your feeling.は気持ち悪い？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>3. 日本語のカタカナ語について、あれこれ考える</h3><p><a href="https://youtu.be/5ruFnMr1vE8">カタカナ語を利用して日本人の英語力＋情報収集力を上げる！！【# 23】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_3.png" alt="QR: 3. 日本語のカタカナ語について、あれこれ考える" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>4. 異文化コミュニケーションを言語学から考える</h3><p><a href="https://www.youtube.com/watch?v=5gMyUqS-H8E">異文化コミュニケーションってたまに耳にするんじゃないかと思いますが、言語学とからめるかどうかをあーだこーだ話してみました。【#49】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_4.png" alt="QR: 4. 異文化コミュニケーションを言語学から考える" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>5. 私たちはメタファーにどっぷり浸かっている</h3><p><a href="https://www.youtube.com/watch?v=rk6J6bSCxL8">みなさん、メタファーにどっぷりつかってますけど、気づいてます？【# 26】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_5.png" alt="QR: 5. 私たちはメタファーにどっぷり浸かっている" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>6. 思考は言語に制御される？―サピア・ウォーフの仮説</h3><p><a href="https://www.youtube.com/watch?v=NXlwEiKYIdw">サピア・ウォーフの仮説は、仮説だけに、いろいろそれで考えられます【#79】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_6.png" alt="QR: 6. 思考は言語に制御される？―サピア・ウォーフの仮説" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>7. 英語は、なぜわざわざ単数と複数を分けるのか</h3><p><a href="https://www.youtube.com/watch?v=c59zd8qrvJo">英語の単複同形名詞は「群れ」を意味する？ーdeerもsheepも昔は複数形があった？！【# 13】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_7.png" alt="QR: 7. 英語は、なぜわざわざ単数と複数を分けるのか" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>8. 昔の英語は不規則動詞だらけ！　-ed系の過去形が生まれた経緯</h3><p><a href="https://www.youtube.com/watch?v=uB69_6Fsh3U">昔の英語は不規則動詞だらけ！【#34】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_8.png" alt="QR: 8. 昔の英語は不規則動詞だらけ！　-ed系の過去形が生まれた経緯" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>9. 顔文字や頭字語など、SNSの表現からみえるもの</h3><p><a href="https://www.youtube.com/watch?v=ehqaWJiMFw4">英語の句読点と大文字の役割【#47】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_9.png" alt="QR: 9. 顔文字や頭字語など、SNSの表現からみえるもの" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>10. 発音の変化は「永遠のシーソー」？</h3><p><a href="https://www.youtube.com/watch?v=JzW-9af99wY">音の変化はゆっくりと【#53】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_10.png" alt="QR: 10. 発音の変化は「永遠のシーソー」？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>11. World Englishesはなぜトレンドになったのか？</h3><p><a href="https://www.youtube.com/watch?v=OanJI2_obEQ">World Englishesはなぜトレンドになったのか？【#115】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_11.png" alt="QR: 11. World Englishesはなぜトレンドになったのか？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>12. 言語はコミュニケーションさせないための暗号?</h3><p><a href="https://www.youtube.com/watch?v=st-crMPgDG8">言語を暗号として見るとこんなにおもしろいことが！【#129】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_12.png" alt="QR: 12. 言語はコミュニケーションさせないための暗号?" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>13. 古英語の発音はなぜわかるのか？</h3><p><a href="https://www.youtube.com/watch?v=7Cl3gjg7J-8">英語史研究は超絶推理ゲーム!!!【#179】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_13.png" alt="QR: 13. 古英語の発音はなぜわかるのか？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>14. ウェブスターが綴り字改革に込めたアメリカ魂</h3><p><a href="https://www.youtube.com/watch?v=ONxhvtsx44Y">辞書編纂者で知られるウェブスターのイギリス綴りcolourからアメリカcolorへの綴り字改革の背後にあるものは？【#251】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_14.png" alt="QR: 14. ウェブスターが綴り字改革に込めたアメリカ魂" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>15. post-などの接頭辞は時代を映す？</h3><p><a href="https://www.youtube.com/watch?v=Wdz0x7_M8cg">re-とかdis-とかun-とか接頭辞は語形成の重要な要素だが、それだけではない--かんたんに作れる分、時代を反映している！【#123】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_15.png" alt="QR: 15. post-などの接頭辞は時代を映す？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>16. ダイグロシア（二言語併用）はバイリンガルとどうちがう？</h3><p><a href="https://www.youtube.com/watch?v=i05bqXXgYwE">ダイグロシアとは？　二言語併用ってことですが、バイリンガル・バイリンガリズムとのちがいは？【#225】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_16.png" alt="QR: 16. ダイグロシア（二言語併用）はバイリンガルとどうちがう？" loading="lazy"></div></article>
+                        <article class="topic-card"><div class="topic-content"><h3>17. 今の英語の否定形は1000年前にもどっている!!</h3><p><a href="https://www.youtube.com/watch?v=RFEL7h_fuX8">いまの英語の否定の形は1000年前に戻っている！【#67】</a></p></div><div class="topic-qr"><img src="qr/inohota_naze_4_17.png" alt="QR: 17. 今の英語の否定形は1000年前にもどっている!!" loading="lazy"></div></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Ryuichi Hotta. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.querySelectorAll('.accordion-button');
+            accordions.forEach(function(accordion) {
+                accordion.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            const searchInput = document.getElementById('toc-search');
+            const topicCards = document.querySelectorAll('.topic-card');
+
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase().trim();
+
+                let hasResult = false;
+                topicCards.forEach(function(card) {
+                    const cardText = card.textContent.toLowerCase();
+                    const isMatch = cardText.includes(searchTerm);
+                    card.classList.toggle('hidden', !isMatch);
+                    if(isMatch) hasResult = true;
+                });
+
+                accordions.forEach(acc => {
+                    const panel = acc.nextElementSibling;
+                    const panelHasVisibleCard = panel.querySelector('.topic-card:not(.hidden)');
+                    
+                    if (searchTerm.length > 0 && panelHasVisibleCard) {
+                        if (!acc.classList.contains('active')) {
+                            acc.classList.add('active');
+                            panel.style.maxHeight = panel.scrollHeight + 'px';
+                        }
+                    } else if (searchTerm.length > 0 && !panelHasVisibleCard) {
+                        if (acc.classList.contains('active')) {
+                            acc.classList.remove('active');
+                            panel.style.maxHeight = null;
+                        }
+                    } else {
+                        if (acc.classList.contains('active')) {
+                            acc.classList.remove('active');
+                            panel.style.maxHeight = null;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>demo_boost</title>
+<link rel="stylesheet" href="inohota_boost.css">
+<style>
+  :root { --card-bg:#fff; --shadow:0 8px 32px rgba(31,38,135,.15); }
+  body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; background:#f4f7f9; margin:0; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .section { padding: 40px 0; }
+  .card { background:#fff; border-radius: 14px; padding: 20px; box-shadow: var(--shadow); }
+  .topics-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .topic-card { background:#fff; border-radius:10px; box-shadow: var(--shadow); padding:14px; }
+  footer { text-align:center; background:#1e3799; color:#fff; padding:30px 20px; margin-top:40px; }
+  .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 998; }
+  .floating-cta .cta-button { background:#FF9900; color:#fff; border-radius:999px; padding:12px 22px; display:inline-block; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <section id="about" class="section card">
+    <h2>About（ダミー）</h2>
+    <p>このデモでは「本日の注目章」と「追従ミニ商品カード」の動作を確認できます。</p>
+  </section>
+
+  <section id="contents" class="section">
+    <h2>書籍から動画へ：目次と対応動画リンク集（ダミー）</h2>
+    <div class="topics-grid">
+      <article class="topic-card"><div class="topic-content"><h3>1. 「英語学」って何？</h3><p><a href="https://www.youtube.com/watch?v=WCYYNCSaXXU">動画1</a></p></div></article>
+      <article class="topic-card"><div class="topic-content"><h3>2. 「決まり文句を覚える」ことの学習効果が高いワケ</h3><p><a href="https://www.youtube.com/watch?v=CDRyXusI7nM">動画2</a></p></div></article>
+      <article class="topic-card"><div class="topic-content"><h3>3. 英米人はなんでもストレートに言うと思ったら大まちがい</h3><p><a href="https://www.youtube.com/watch?v=a56yHlMhBd8">動画3</a></p></div></article>
+      <article class="topic-card"><div class="topic-content"><h3>10. Zがアルファベットの最後に追いやられた理由</h3><p><a href="https://www.youtube.com/watch?v=1-XL2fLA8Pk">動画10</a></p></div></article>
+    </div>
+  </section>
+</div>
+
+<div class="floating-cta"><a href="#" class="cta-button">Amazonで買う</a></div>
+
+<footer>FOOTER（ダミー）</footer>
+
+<script src="inohota_boost.js" defer></script>
+</body>
+</html>
