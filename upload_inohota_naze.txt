@@ -1,0 +1,4 @@
+lcd C:\00work\OneDrive - keio.jp\zEtc\keioacjp\hellog\inohota_naze
+cd /home/md202/aa107247/public_html/hellog
+put index.html
+bye
