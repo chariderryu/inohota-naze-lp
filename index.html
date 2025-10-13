@@ -132,6 +132,56 @@
             .floating-cta { width: calc(100% - 40px); right: 20px; bottom: 20px; }
             .floating-cta .cta-button { width: 100%; font-size: 1rem; padding: 15px 20px; }
         }
+    /* ====== 固定ナビ（トップへ／目次へ） ====== */
+    .nav-fab{
+      position: fixed;
+      right: 140px;  /* ← 100px から少し広げる */
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1001;
+      pointer-events: none;      /* 親はクリック拾わない */
+    }
+    .nav-fab__btn{
+      pointer-events: auto;      /* 子だけクリック可 */
+      border: none;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      background: var(--secondary-color);
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      cursor: pointer;
+      transition: transform .15s ease, opacity .2s ease;
+      opacity: 0;                /* 初期は非表示（JSでスクロール後に出す） */
+      transform: translateY(8px) scale(.98);
+    }
+    .nav-fab__btn:hover{ transform: translateY(0) scale(1.02); }
+    .nav-fab__btn:focus{ outline: 3px solid rgba(74,105,189,.35); outline-offset: 2px; }
+    .nav-fab__top{ background: var(--primary-color); }
+    .nav-fab__toc{ background: var(--secondary-color); }
+    
+    /* スクロール後に表示するためのクラス */
+    .nav-fab--show .nav-fab__btn{
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+    /* 目次ジャンプ時に固定ヘッダと被らないよう余白（見出しに効く） */
+    #toc, #toc h2, #toc h3 { scroll-margin-top: 70px; }
+    
+    /* iOS セーフエリア対応 & モバイル最適化 */
+    @supports(padding:max(0px)){
+      .nav-fab{ bottom: max(20px, env(safe-area-inset-bottom)); }
+    }
+    @media (max-width: 768px){
+      .nav-fab{ right: 20px; bottom: 20px;}          /* モバイルでは右下へ寄せる */
+      .nav-fab__btn{ font-size: 0.9rem; padding: 11px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .nav-fab__btn{ transition: none; }
     </style>
 
     <!-- ✅ 正規URL（GitHub Pages想定：必要に応じて修正） -->
@@ -183,6 +233,47 @@
       "inLanguage": "ja"
     }
     </script>
+
+    <!-- ✅ 正規URL（Keio サーバ本番） -->
+    <link rel="canonical" href="https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/">
+    
+    <!-- ✅ OGP / Twitter Card（Keio ドメインの絶対URLに統一） -->
+    <meta property="og:title" content="言語学でスッキリ解決！英語の「なぜ？」(いのほたなぜ) | 井上逸兵・堀田隆一">
+    <meta property="og:description" content="英語史×言語学で“英語のなぜ”を解く。対応動画・試し読み・購入リンクあり。著：井上逸兵・堀田隆一／ナツメ社。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/">
+    <meta property="og:image" content="https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/lib/inohotanaze_front_cover_small.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- <meta name="twitter:site" content="@（あればXアカウント）"> -->
+    
+    <!-- ✅ 構造化データ（最小） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "inLanguage": "ja",
+      "name": "言語学でスッキリ解決！英語の「なぜ？」（いのほたなぜ）",
+      "url": "https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "言語学でスッキリ解決！英語の「なぜ？」",
+      "alternateName": "いのほたなぜ",
+      "author": [
+        { "@type": "Person", "name": "井上 逸兵" },
+        { "@type": "Person", "name": "堀田 隆一" }
+      ],
+      "publisher": { "@type": "Organization", "name": "ナツメ社" },
+      "image": "https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/lib/inohotanaze_front_cover_small.jpg",
+      "url": "https://user.keio.ac.jp/~rhotta/hellog/inohota_naze/",
+      "inLanguage": "ja"
+    }
+    </script>
+
 </head>
 <script src="inohota_boost.js" defer></script>
 <body id="page-top">
@@ -482,6 +573,101 @@
                 });
             });
         });
+    </script>
+
+    <!-- 固定ナビ（トップへ／目次へ） -->
+    <nav class="nav-fab" aria-label="ページ内ナビゲーション">
+<!--      <button type="button" class="nav-fab__btn nav-fab__toc" aria-label="目次へ" title="目次へ">目次へ</button> -->
+      <button type="button" class="nav-fab__btn nav-fab__top" aria-label="トップへ" title="トップへ">トップへ</button>
+    </nav>
+    
+    <script>
+    (function(){
+      const fab = document.querySelector('.nav-fab');
+      const btnTop = document.querySelector('.nav-fab__top');
+      const btnToc = document.querySelector('.nav-fab__toc');
+      const tocEl = document.getElementById('toc');
+    
+      // スクロールYが一定を超えたら表示
+      const SHOW_AT = 600;
+      const onScroll = () => {
+        if (window.scrollY > SHOW_AT) fab.classList.add('nav-fab--show');
+        else fab.classList.remove('nav-fab--show');
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    
+      const smoothScrollTo = (y) => {
+        try { window.scrollTo({ top: y, behavior: 'smooth' }); }
+        catch { window.scrollTo(0, y); }
+      };
+    
+      btnTop.addEventListener('click', () => smoothScrollTo(0));
+      btnToc.addEventListener('click', () => {
+        if(!tocEl) return smoothScrollTo(0);
+        const y = tocEl.getBoundingClientRect().top + window.pageYOffset - 70; // 固定ヘッダ分
+        smoothScrollTo(y);
+        setTimeout(() => {
+          const h = tocEl.querySelector('h2, h3, button, a');
+          (h || tocEl).setAttribute('tabindex','-1');
+          (h || tocEl).focus({preventScroll:true});
+        }, 400);
+      });
+    })();
+    </script>
+    <script>
+    (function(){
+      const fab = document.querySelector('.nav-fab');
+      const cta = document.querySelector('.floating-cta');
+      if(!fab || !cta) return;
+    
+      const GAP = 16; // CTAとの間隔（px）
+    
+      function rectsOverlap(a, b, gap = 0){
+        return !(a.right < b.left - gap ||
+                 a.left  > b.right + gap ||
+                 a.bottom < b.top - gap ||
+                 a.top   > b.bottom + gap);
+      }
+    
+      function placeFab(){
+        // まず初期位置に戻す（CSS初期値と合わせる）
+        if (window.innerWidth >= 1024){
+          fab.style.right  = '140px';
+          fab.style.bottom = '20px';
+        }else{
+          fab.style.right  = '20px';
+          fab.style.bottom = '20px';
+        }
+    
+        // その位置で重なるかを判定
+        const f = fab.getBoundingClientRect();
+        const c = cta.getBoundingClientRect();
+        if (!rectsOverlap(f, c, GAP)) return; // 重なってなければ何もしない
+    
+        // 重なる場合：画面幅で回避方法を切替
+        if (window.innerWidth >= 1024){
+          // デスクトップ：CTAの左に逃がす（右余白をCTA左端まで拡大）
+          const spaceRight = window.innerWidth - c.left; // CTA左端から右端まで
+          fab.style.right = (spaceRight + GAP) + 'px';
+          // bottomはそのまま
+        }else{
+          // モバイル：CTAの上に持ち上げる
+          const lift = (window.innerHeight - c.top) + GAP; // 画面下端からCTA上端へ
+          fab.style.bottom = lift + 'px';
+          fab.style.right  = '20px';
+        }
+      }
+    
+      // 初回・スクロール・リサイズ・レイアウト変化で再配置
+      const ro = ('ResizeObserver' in window) ? new ResizeObserver(placeFab) : null;
+      if (ro) ro.observe(cta);
+    
+      ['load','resize','scroll'].forEach(ev =>
+        window.addEventListener(ev, placeFab, {passive:true})
+      );
+      placeFab();
+    })();
     </script>
 
 </body>
